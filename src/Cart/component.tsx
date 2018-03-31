@@ -70,6 +70,7 @@ class Cart extends React.Component<Props, State> {
       .firestore()
       .collection("orders")
       .add({
+        ts: new Date().toISOString(),
         total,
         items: Object.keys(itemsGrouped)
           .map(k => itemsGrouped[k])
