@@ -61,6 +61,7 @@ class Cart extends React.Component<Props, State> {
         .map(k => itemsGrouped[k])
         .map(group =>
           Object.assign({}, group.product, {
+            price: group.product.price / 100,
             quantity: group.count
           })
         )
