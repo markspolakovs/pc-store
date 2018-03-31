@@ -55,7 +55,7 @@ const data: Product[] = [
     description:
       "Tired of constantly asking for Coca-Cola and its other sugary friends, only to have your request rejected for \"health reasons\" or something silly like that? Well, you're not getting it... through conventional means. However, thanks to a breakthrough by our colleagues at the Culham Centre for Fusion Energy, we can now use quantum telekinesis to directly teleport Coca-Cola into the cafeteria, avoiding this problem once and for all! Note: may come with side-effects, including unexpectedly violent quantum superposition of one's dental fillings, crowns, tooth enamel, and teeth.",
     imageUrl:
-      "https://www.cokesolutions.com/content/cokesolutions/site/us/en/equipment/vending-machines/jcr:content/contentParsys/coolersandfountains_1809938134.image.350-449.png"
+      "https://i.imgur.com/R32txVl.png"
   },
   {
     id: "new-couch",
