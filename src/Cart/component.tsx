@@ -3,6 +3,8 @@ import { Dispatch, bindActionCreators } from "redux";
 import { connect } from "react-redux";
 const Ionicon = require("react-ionicons");
 import { Popover, PopoverBody, Button, Table } from "reactstrap";
+import * as firebase from "firebase";
+import "@firebase/firestore";
 
 import * as cartState from "./state";
 import { Product } from "../Product/types";
@@ -63,6 +65,19 @@ class Cart extends React.Component<Props, State> {
           })
         )
     });
+    firebase
+      .firestore()
+      .collection("orders")
+      .add({
+        total,
+        items: Object.keys(itemsGrouped)
+          .map(k => itemsGrouped[k])
+          .map(group =>
+            Object.assign({}, group.product, {
+              quantity: group.count
+            })
+          )
+      });
   };
 
   render() {
@@ -104,18 +119,20 @@ class Cart extends React.Component<Props, State> {
             ) : (
               <div>
                 <Table hover size="sm">
-                  {Object.keys(itemsGrouped)
-                    .map(k => itemsGrouped[k])
-                    .map(item => (
-                      <tr key={item.product.id}>
-                        <td>{item.product.name}</td>
-                        <td>x{item.count}</td>
-                      </tr>
-                    ))}
-                  <tr>
-                    <td>Total</td>
-                    <td>{makePrice(total)}</td>
-                  </tr>
+                  <tbody>
+                    {Object.keys(itemsGrouped)
+                      .map(k => itemsGrouped[k])
+                      .map(item => (
+                        <tr key={item.product.id}>
+                          <td>{item.product.name}</td>
+                          <td>x{item.count}</td>
+                        </tr>
+                      ))}
+                    <tr>
+                      <td>Total</td>
+                      <td>{makePrice(total)}</td>
+                    </tr>
+                  </tbody>
                 </Table>
                 <Button color="danger" onClick={clearCart}>
                   Clear Cart
