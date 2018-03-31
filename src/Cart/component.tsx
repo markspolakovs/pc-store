@@ -32,6 +32,39 @@ class Cart extends React.Component<Props, State> {
     this.setState(state => ({ popoverOpen: !state.popoverOpen }));
   };
 
+  sendAnalytics = () => {
+    const { total, items, clearCart } = this.props;
+    let itemsGrouped: {
+      [key: string]: { product: Product; count: number };
+    } = {};
+    if (this.state.popoverOpen) {
+      items.forEach(item => {
+        if (item.id in itemsGrouped) {
+          itemsGrouped[item.id].count++;
+        } else {
+          itemsGrouped[item.id] = {
+            product: item,
+            count: 1
+          };
+        }
+      });
+    }
+    window.gtag("event", "purchase", {
+      transaction_id: +new Date(),
+      value: total / 100,
+      currency: "EUR",
+      tax: 0,
+      shipping: 0,
+      items: Object.keys(itemsGrouped)
+        .map(k => itemsGrouped[k])
+        .map(group =>
+          Object.assign({}, group.product, {
+            quantity: group.count
+          })
+        )
+    });
+  };
+
   render() {
     const { total, items, clearCart } = this.props;
     let itemsGrouped: {
@@ -79,20 +112,31 @@ class Cart extends React.Component<Props, State> {
                         <td>x{item.count}</td>
                       </tr>
                     ))}
-                    <tr>
-                        <td>Total</td>
-                        <td>{makePrice(total)}</td>
-                    </tr>
+                  <tr>
+                    <td>Total</td>
+                    <td>{makePrice(total)}</td>
+                  </tr>
                 </Table>
-                <Button color="danger" onClick={clearCart}>Clear Cart</Button>
-                <Button color="success" onClick={() => {fiddlesticks(); clearCart();}}>Checkout</Button>
+                <Button color="danger" onClick={clearCart}>
+                  Clear Cart
+                </Button>
+                <Button
+                  color="success"
+                  onClick={() => {
+                    this.sendAnalytics();
+                    fiddlesticks();
+                    clearCart();
+                  }}
+                >
+                  Checkout
+                </Button>
               </div>
             )}
           </PopoverBody>
         </Popover>
         {this.props.epilepsy && (
-            <style>
-                {`
+          <style>
+            {`
                     @keyframes epilepsy {
                         0% { background-color: red; }
                         20% { background-color: orange; }
@@ -117,7 +161,7 @@ class Cart extends React.Component<Props, State> {
                         animation-delay: 800ms;
                     }
                 `}
-            </style>
+          </style>
         )}
       </div>
     );
@@ -130,8 +174,12 @@ const mapStateToProps = (state: RootState) => ({
   epilepsy: cartState.selectors.epilepsy(state)
 });
 
-const mapDispatchToProps = (dispatch: Dispatch<RootState>) => bindActionCreators({
-    clearCart: cartState.actions.clearCart
-}, dispatch);
+const mapDispatchToProps = (dispatch: Dispatch<RootState>) =>
+  bindActionCreators(
+    {
+      clearCart: cartState.actions.clearCart
+    },
+    dispatch
+  );
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cart as any);
