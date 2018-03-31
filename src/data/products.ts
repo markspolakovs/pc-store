@@ -36,7 +36,8 @@ const data: Product[] = [
     price: 2994,
     buyable: false,
     available: true,
-    description: "If you didn't already have enough capitalism, have even more! We present, Nothing - the 5-pack! Now you can get five units of absolutely nothing for the price of six! We've never seen a better deal here, and we doubt you have either!"
+    description:
+      "If you didn't already have enough capitalism, have even more! We present, Nothing - the 5-pack! Now you can get five units of absolutely nothing for the price of six! We've never seen a better deal here, and we doubt you have either!"
   },
   {
     id: "decent-bac-schedule",
@@ -51,8 +52,10 @@ const data: Product[] = [
     price: 999,
     buyable: false,
     available: true,
-    description: "Tired of constantly asking for Coca-Cola and its other sugary friends, only to have your request rejected for \"health reasons\" or something silly like that? A little bribery never hurt anyone... note: the Pupils' Committee does not support bribery in any way, and is not responsible for any consequences as a result of purchasing this item",
-    imageUrl: "https://www.cokesolutions.com/content/cokesolutions/site/us/en/equipment/vending-machines/jcr:content/contentParsys/coolersandfountains_1809938134.image.350-449.png"
+    description:
+      "Tired of constantly asking for Coca-Cola and its other sugary friends, only to have your request rejected for \"health reasons\" or something silly like that? Well, you're not getting it... through conventional means. However, thanks to a breakthrough by our colleagues at the Culham Centre for Fusion Energy, we can now use quantum telekinesis to directly teleport Coca-Cola into the cafeteria, avoiding this problem once and for all! Note: may come with side-effects, including unexpectedly violent quantum superposition of one's dental fillings, crowns, tooth enamel, and teeth.",
+    imageUrl:
+      "https://www.cokesolutions.com/content/cokesolutions/site/us/en/equipment/vending-machines/jcr:content/contentParsys/coolersandfountains_1809938134.image.350-449.png"
   },
   {
     id: "new-couch",
@@ -60,7 +63,8 @@ const data: Product[] = [
     price: 49999,
     buyable: false,
     available: true,
-    imageUrl: "https://cdn-images.article.com/products/SKU312G/2890x1500/image24398.jpg?w=400"
+    imageUrl:
+      "https://cdn-images.article.com/products/SKU312G/2890x1500/image24398.jpg?w=400"
   },
   {
     id: "rip-dst",
@@ -77,7 +81,8 @@ const data: Product[] = [
     buyable: false,
     available: true,
     description: "It's an avocado.",
-    imageUrl: "https://www.organicfacts.net/wp-content/uploads/2013/06/pomelo.jpg"
+    imageUrl:
+      "https://www.organicfacts.net/wp-content/uploads/2013/06/pomelo.jpg"
   },
   {
     id: "wat",
