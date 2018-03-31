@@ -51,7 +51,7 @@ const ProductComponent: React.SFC<Props & RouteProps> = (
   }
   const productsExceptCurrent = without(products, product);
   const cols = productsExceptCurrent.map(item => (
-    <Col key={item.id} xs="4">
+    <Col key={item.id} md="4">
       <Card>
         <CardBody>
           <CardTitle>

@@ -3060,6 +3060,10 @@ gh-pages@^1.1.0:
     graceful-fs "4.1.11"
     rimraf "^2.6.2"
 
+ghspa@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/ghspa/-/ghspa-1.0.0.tgz#ed6626bbacff12c5c4ee2f1f0aeacef0e66e62ff"
+
 glob-base@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/glob-base/-/glob-base-0.3.0.tgz#dbb164f6221b1c0b1ccf82aea328b497df0ea3c4"

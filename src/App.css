@@ -36,6 +36,10 @@
   }
 }
 
+img {
+  max-width: 100vw !important;
+}
+
 .fiddlesticks {
   position: fixed;
   top: 10vh;
