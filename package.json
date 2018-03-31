@@ -1,0 +1,51 @@
+{
+  "name": "store",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@types/jquery": "^3.3.1",
+    "@types/lodash": "^4.14.106",
+    "@types/react": "^16.1.0",
+    "@types/react-dom": "^16.0.4",
+    "@types/react-redux": "^5.0.15",
+    "@types/react-router": "^4.0.23",
+    "@types/react-router-dom": "^4.2.6",
+    "@types/react-router-redux": "^5.0.13",
+    "@types/reactstrap": "^5.0.20",
+    "@types/web-animations-js": "^2.2.6",
+    "bootstrap": "^4.0.0",
+    "gh-pages": "^1.1.0",
+    "jquery": "^3.3.1",
+    "lodash": "^4.17.5",
+    "object-values": "^2.0.0",
+    "popper.js": "^1.14.1",
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0",
+    "react-ionicons": "^2.1.6",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^4.0.8",
+    "react-scripts": "1.1.1",
+    "reactstrap": "^5.0.0",
+    "redux": "^3.7.2",
+    "reselect": "^3.0.1",
+    "tslib": "^1.9.0",
+    "typesafe-actions": "^1.2.0-rc.2",
+    "typescript": "^2.8.1",
+    "utility-types": "^1.1.0",
+    "web-animations-js": "^2.3.1"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom",
+    "eject": "react-app-rewired eject",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "react-app-rewire-typescript": "^2.0.2",
+    "react-app-rewired": "^1.5.0"
+  }
+}
