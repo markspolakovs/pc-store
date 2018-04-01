@@ -68,6 +68,7 @@ export const reducer = (state = initialState, action: AnyAction) => {
                 items: []
             };
         case getType(actions.seizures):
+            window.gtag("event", "discovered secret");
             return {
                 ...state,
                 seizures: action.val
