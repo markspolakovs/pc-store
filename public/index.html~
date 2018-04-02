@@ -28,14 +28,16 @@
     gtag('js', new Date());
 
     gtag('config', 'UA-70133844-12');
-    gtag("event", "rick rolled");
   </script>
 
   <title>Pupils' Committee Store</title>
 </head>
 
 <body>
-  <iframe width="1280" height="720" style="width: 100vw; height: 100vh; position: absolute; top: 0; left: 0" src="https://www.youtube.com/embed/DLzxrzFCyOs?rel=0&controls=0&showinfo=0&autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> 
+  <noscript>
+    You need to enable JavaScript to run this app.
+  </noscript>
+  <div id="root"></div>
   <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -46,6 +48,9 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+  <script src="/ghspa.js"></script>
+  <img src="/dinosaur.png" style="visibility: hidden; width: 1px; height: 1px; pointer-events: none;">
+  <audio src="/dinosaur.mp3" preload style="visibility: hidden; width: 1px; height: 1px; pointer-events: none;" />
 </body>
 
 </html>
